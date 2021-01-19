@@ -33,8 +33,8 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    normalized_string = None
-    return normalized_string
+    normalized_string = input_string[:].lower()
+    return ' '.join(normalized_string.split())
 
 
 def no_vowels(input_string):
@@ -58,5 +58,6 @@ def no_vowels(input_string):
             >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    no_vowel_string = None
-    return no_vowel_string
+    no_vowel_string = input_string[:]
+    table = str.maketrans('aeiou', '') # https://dojang.io/mod/page/view.php?id=2299
+    return no_vowel_string.translate(table)
