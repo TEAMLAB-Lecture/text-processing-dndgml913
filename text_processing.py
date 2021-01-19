@@ -59,5 +59,5 @@ def no_vowels(input_string):
             ''W lv Pythn!'
     """
     no_vowel_string = input_string[:]
-    table = str.maketrans('aeiou', '\0\0\0\0\0') # https://dojang.io/mod/page/view.php?id=2299
+    table = str.maketrans('aeiou', ,'aeiou') # https://www.w3schools.com/python/ref_string_maketrans.asp
     return no_vowel_string.translate(table)
