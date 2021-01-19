@@ -7,7 +7,6 @@ NLP에서 흔히하는 전처리는 소문자 변환, 앞뒤 필요없는 띄어
 이번 숙제에서는 텍스트 처리 방법을 파이썬으로 배워보겠습니다. 
 """
 
-
 def normalize(input_string):
     """
      인풋으로 받는 스트링에서 정규화된 스트링을 반환함
@@ -33,9 +32,8 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    normalized_string = None
-    return normalized_string
-
+    normalized_string = input_string[:].lower()
+    return ' '.join(normalized_string.split())
 
 def no_vowels(input_string):
     """
@@ -58,5 +56,6 @@ def no_vowels(input_string):
             >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    no_vowel_string = None
-    return no_vowel_string
+    no_vowel_string = input_string[:]
+    table = no_vowel_string.maketrans("", "", "aeiouAEIOU") # https://www.w3schools.com/python/ref_string_maketrans.asp
+    return no_vowel_string.translate(table)
